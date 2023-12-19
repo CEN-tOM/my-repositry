@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/git_practice-css/git_practice.css">
+
+<html>
+  <h1 class="main_tittle" id="main_title">これまでの復習と自習</h1>
+
+  <h2 class="s_ttl">CLIの基礎</h2>
+  <ol>
+    <li><span>"pwd"</span>今どこにいるか。</li>
+    <li><span>"cd 〇〇"</span>〇〇で選択したディレクトリに移動する。</li>
+    <li><span>"cd ../"</span>今いるところからひとつ上の階層に戻る。</li>
+    <li><span>"ls"</span>今いるところの中身は何があるかリスト出す。</li>
+    <li><span>"mkdir 〇〇"</span>〇〇という名前のﾌｫﾙﾀﾞ(ﾃﾞｨﾚｸﾄﾘ)を作成する。</li>
+    <li><span>"touch 〇〇"</span>〇〇という名前のﾌｧｲﾙを作成。拡張子も指定。</li>
+    <li><span>"less 〇〇"</span>〇〇の中身を閲覧。</li>
+  </ol>
+
+  <h2 class="s_ttl">gitの基礎</h2>
+  <p><span>Add</span>commitする前に「ｽﾃｰｼﾞ」という箱に一次保存する事。</p>
+  <p><span>commit</span>ｵﾝﾗｲﾝﾘﾎﾟｼﾞﾄﾘに送信する前のﾛｰｶﾙﾘﾎﾟｼﾞﾄﾘに保存する事。</p>
+  <p><span>push</span>ﾛｰｶﾙﾘﾎﾟｼﾞﾄﾘからｵﾝﾗｲﾝﾘﾎﾟｼﾞﾄﾘに送信する事。</p>
+
+  <ol>
+    <p>gitの手順</p>
+    <li><span>"git init"</span>で最初の初期手順→該当フォルダ内にﾛｰｶﾙﾘﾎﾟｼﾞﾄﾘ作成。</li>
+    <li><span>"git status"</span>gitの状態確認。</li>
+    <li><span>"git add ."</span>でフォルダ内の全てのファイルをｽﾃｰｼﾞ</li>
+    <li><span>"git add 任意の項目"</span>でフォルダ内の任意の項目をｽﾃｰｼﾞ</li>
+    <li></span>"git commit -m "任意コメント""</span>でﾛｰｶﾙﾘﾎﾟｼﾞﾄﾘに保存
+    <br>この任意コメントで何を修正追加したのかなど簡単に見出しする。</li>
+    <li><span>"git log"</span>ｺﾐｯﾄ履歴見れる。</li>
+    <li>
+      <span>"git branch"</span>でブランチ名を確認する。→確認したところ"main"だったのでOK。
+      <br>"main"ではなく"master"になっていたら"git branch -M main"と入力。
+      <br>これでブランチ名が"main"に変わる。
+    </li>
+    <li>
+      その後<span>"git remote add origin「githubURL」"</span>
+      でリモートリポジトリと接続される。
+    </li>
+    <li>最後に<span>"git push -u origin main"</span>と入力する。</li>
+  </ol>
+  
+  <ol>
+    <p>git branchについて</p>
+    <li><span>"git branch"</span>ﾌﾞﾗﾝﾁの確認。</li>
+    <li><span>"git branch 〇〇"</span>〇〇という名前のﾌﾞﾗﾝﾁ作成。</li>
+    <li><span>"git switch 〇〇"</span>で〇〇というﾌﾞﾗﾝﾁに移動する。</li>
+    <li><span>"git switch -c 〇〇"</span>で〇〇というﾌﾞﾗﾝﾁ作成し移動する。</li>   <!-- git_branchという名前のbranch作成し、そこにpushしてみる。-->
+    <li></span>"git switch -m 〇〇 △△"</span>で〇〇というﾌﾞﾗﾝﾁを△△という名前に変更。</li>
+    <li><span>"git branch -vv"</span>そのﾌﾞﾗﾝﾁの上流見れる。</li>
+    <li><span>"git push -u origin 「分岐したbranch名」"</span>と入力するとｻﾌﾞﾌﾞﾗﾝﾁもﾘﾓｰﾄﾘﾎﾟｼﾞﾄﾘに保存される。</li>
+    <li><span>"git branch -d 「branch名」"</span>でﾌﾞﾗﾝﾁ削除。</li>
+  </ol>
+
+  <ol>
+    <p>プルリクエストについて</p>
+    <li>詳細はこちらの<a href="https://backlog.com/ja/git-tutorial/pull-request/06/" target="_blank">リンク</a></li>
+    <li></li>
+    <li>異なるブランチをマージする。(ひとつにくっつける。)</li>
+    <li>マージする前にコードがぶつかってないかチェックする。（コンフリクト）</li>
+    <li>コードをWeb上で簡易的にチェックできる。</li>
+    <li>マージする内容などにコメントを残す。</li>
+  </ol>
+
+    <p>ローカル側でのマージについて</p>
+    ・マージされたいブランチにいる状態で<span>"git merge 〇〇"</span>〇〇はマージしたいブランチ名。
+
+  <p>ローカルでマージしたあと、pushするときに下記のようなエラー出現。
+    <br> ! [rejected]        main -> main (fetch first)
+    <br>このエラーが出たあとの対処法は、
+    <br><span>"git fetch"してenter。</span>
+    <br><span>"git merge origin/master"</span>
+    <br>これで解決した。詳細は不明。後日調べて追記する。
+  </p>
+
+  <ol><p>リモートリポジトリからダウンロード<span>"git clone"</span>について</p>
+    <li>リモートリポジトリから全部ダウンロードする方法。
+      <br>vscodeで新しいﾌｫﾙﾀﾞ開き、<span>"git clone 「URL」"</span>
+      <br>「URL」にリモートリポジトリURL貼り付けたら全部ダウンロードできる。
+      <br>ただしメインブランチしかダウンロードされない。
+    </li>
+    <li>メインブランチ以外もダウンロードしたい場合。
+      <br><span>"git clone -b 「ブランチ名」「URL」"</span>でいける。
+      <br>ただし先にメインブランチをダウンロードしているのでフォルダが重複する。
+      <br>対処方として、<span>"git clone -b 「ブランチ名」「URL」 「任意のフォルダ名」"</span>
+      <br>これで最初にダウンロードしたメインブランチフォルダと別フォルダができる。
+    </li>
+  </ol>
+  
+  <p>プルリクエストについて</p>
+  <span>"git pull"</span>
+  <br>これでリモートリポジトリのデータと手元のデータの差分をダウンロードしてくれる。
+  
+git cloneまで試してみた。
+<br>次回からのgitはUdemyｾｸｼｮﾝ６から。
+<br>次はaddやcommitをキャンセルしたりする。
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/code/code_practice/reset.css" />
+<link rel="stylesheet" href="/code/code_practice/style.css" />
+s
+<body>
+  <header class="header" id="header">
+    <div class="header_wrap __inner">
+      <p class="HTML_memo">
+        今後、HTML&CSSの練習はサブブランチのcode_editにpushしていく。
+      </p>
+      <h1 class="main_ttl">HTML＆CSS練習</h1>
+      <p class="sub_heading">HTML&CSSの練習とTips</p>
+    </div>
+  </header>
+  <section class="memo" id="memo">
+    <div class="memo_wrap __inner">
+      <h1 class="section_ttl">MEMO</h1>
+      <div class="memo_block _memo1">
+        <h2 class="memo_ttl _memo1">__innerについて</h2>
+        <p class="memo_content _memo1">
+          各セクションの直下の子要素(主にdiv)のclass属性に追加する。
+          <br />ただしtopやfvには付与しないことが多い。
+          <br />これを各セクションに付与することで、全てのセクションの左右中央寄せや、
+          <br />上下のセクション間のpadding設定、widthなどを一括管理できる。
+          <br />個別にwidthなどの数値を設定したい場合には、
+          <br />"__inner"と並列に付与している兄弟要素divに個別でwidth指定してあげれば良い。
+        </p>
+      </div>
+      <div class="memo_block _memo2">
+        <h2 class="memo_ttl _memo2">空白の開け方</h2>
+        <p class="memo_content _memo2">
+          キーボードでスペースをあけようとしてもではうまく空白をあけられない。
+          <br />空白をあけるにはHTMLに決まったコマンドを入力する。
+        </p>
+        <ol class="make-space">
+          <li>【&amp;nbsp;】：半角スペースと同じサイズの空白</li>
+          <li>【&amp;thinsp;】：&amp;nbsp;の空白より小さい空白</li>
+          <li>【&amp;ensp;】：半角スペースより間隔がやや広い空白</li>
+          <li>【&amp;emsp;】：全角スペースとほぼ同じサイズの空白</li>
+        </ol>
+        <p>
+          おまけ<br />
+          【&amp;nbsp;】のような文字をHTMLで文字列として表示させるには<br />
+          【&】と【nbsp;】の間に【amp;】を入力すると本来空白となる【&amp;nbsp;】を<br />
+          文字列として表示できる。
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="practice" id="practice">
+    <div class="practice_wrap __inner">
+      <ul>
+        <h1 class="section_ttl">Practice</h1>
+        <li>
+          <span class="practice_css_ttl">text-align</span>
+          <div class="text-align_content _content_txt">
+            inline要素やinline-block要素を揃える。
+            <br />[方法]揃えしたい要素の親要素に指定。[inline要素]文字、img、span
+            <br />[指定方法]left,center,right,justify(両端揃え)
+            <div class="text-align _note">
+              <div class="text-align_note_parents">
+                <p>親ブロック</p>
+                <div class="text-align_note_child">
+                  子ブロック(inline要素に指定し中央寄せ)
+                  <p>
+                    これはpタグ。pタグにはright指定。
+                    <br />するとpタグ内の文字列が右端に整列。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="practice_css_ttl">縦方向の中央揃え</span>
+          <div class="vertical-center_content _content_txt">
+            <p>
+              ・要素のheightと中身のtxtのline-heightを一緒にする。(一行txtのみ)
+            </p>
+            <p>・txtの上下に同じ余白を設定(複数行txtもok)</p>
+            <p>
+              ・vertical-alignを使用する。<br />
+              &emsp;[方法]上下中央揃えしたいinline要素に指定。&emsp;親要素ではなく揃える要素に！
+              <br />
+              &emsp;[指定方法]top,text-top,middle,baseline,bottom,text-bottom。<br />
+            </p>
+            <div class="vertical-center _note">
+              <div class="vertical-center_note_parents">
+                <p>親要素</p>
+                <div class="vertical-center_note_child _v-c_n_child1">子①</div>
+                <div class="vertical-center_note_child _v-c_n_child2">子②</div>
+                <div class="vertical-center_note_child _v-c_n_child3">子③</div>
+                <p>各子要素のボックスが上下中央に揃えられた。</p>
+              </div>
+            </div>
+            <p>
+              ・positionプロパティを使用する
+              <br />&emsp;[方法]親要素に「position: relative;」
+              <br />&emsp;&emsp;&emsp;&nbsp;&thinsp;&thinsp;中央揃えしたい要素に、
+              <br />&emsp;&emsp;&emsp;&nbsp;&thinsp;&thinsp;「position:
+              absolute;」 <br />&emsp;&emsp;&emsp;&nbsp;&thinsp;&thinsp;「top:
+              50%;」 <br />&emsp;&emsp;&emsp;&nbsp;&thinsp;&thinsp;「left:
+              50%;」 <br />&emsp;&emsp;&emsp;&nbsp;&thinsp;&thinsp;「transform:
+              translate(-50%, -50%);」
+            </p>
+            <div class="position-property _note">
+              <div class="position-property_note_parents">
+                <p>親要素</p>
+                <div class="position-property_note_child">子ブロック要素</div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>

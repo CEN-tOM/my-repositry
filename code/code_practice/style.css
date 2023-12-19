@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+.__inner {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  background-color: aquamarine;
+}
+
+.HTML_memo {
+  padding: 20px;
+}
+
+.main_ttl {
+  background-color: #f3dc59;
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  -webkit-text-stroke: 2px red;
+  text-stroke: 1px red;
+}
+
+.sub_heading {
+  padding: 20px 0 0 20px;
+  text-decoration: underline;
+}
+
+.memo_wrap {
+  background-color: bisque;
+  max-width: 1200px;
+  width: 100vw;
+}
+
+.section_ttl {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.memo_block {
+  margin: 10px 0;
+}
+
+.memo_ttl {
+  width: 160px;
+  padding: 5px;
+  margin: 5px 0;
+  border: solid #ff0000 2px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: large;
+}
+
+.memo_block p {
+  line-height: 1.5em;
+}
+
+.memo_block ol {
+  margin: 10px 0;
+}
+
+.memo_block li {
+  list-style-position: inside;
+}
+
+.practice_wrap {
+  background-color: #cecece;
+  max-width: 1200px;
+  width: 100vw;
+}
+
+.practice_wrap li {
+  list-style-type: square;
+  list-style-position: inside;
+  color: #ff0000;
+  font-size: 1.5em;
+  margin: 10px 0 20px;
+}
+
+.practice_css_ttl {
+  display: inline-block;
+  border-bottom: solid #ff0000 2px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+._content_txt {
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+._note {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 600px;
+  height: 200px;
+  border: solid #000 3px;
+}
+
+.text-align_note_parents {
+  width: 100%;
+  height: 100%;
+  background-color: #26c706;
+  text-align: center;
+}
+
+.text-align_note_child {
+  width: 80%;
+  height: 80%;
+  background-color: #decd6b;
+  display: inline-block;
+}
+
+.text-align_note_child p {
+  background-color: #fff;
+  text-align: right;
+}
+
+.vertical-center,
+.position-property {
+  margin-left: 20px;
+  background-color: #ff7700;
+  position: relative;
+}
+
+.vertical-center_note_child {
+  display: inline-block;
+  border: solid #000 1px;
+  vertical-align: middle;
+  /* 子要素のボックスの上下中央揃え */
+}
+
+._v-c_n_child1 {
+  height: 30px;
+  background-color: #ff0000;
+}
+
+._v-c_n_child2 {
+  height: 100px;
+  background-color: #f3dc59;
+}
+
+._v-c_n_child3 {
+  height: 60px;
+  background-color: aqua;
+}
+
+.position-property_note_child {
+  border: solid #000 1px;
+  width: 50%;
+  height: 80px;
+  background-color: aquamarine;
+  /* ここからが上下左右中央寄せの呪文 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* ここまでが呪文 */
+}
