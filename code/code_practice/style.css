@@ -159,3 +159,13 @@
   transform: translate(-50%, -50%);
   /* ここまでが呪文 */
 }
+
+.Flex-direction_note__wrap {
+  display: flex;
+  width: 75%;
+}
+
+.Flex-direction-1,
+.Flex-direction-2 {
+  width: 40%;
+}
